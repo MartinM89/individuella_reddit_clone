@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar-div a {
+    text-decoration: none;
+    color: black;
+}
+
+.top-bar-div a:hover {
+    text-decoration: underline;
+}
+
+.top-bar-div {
+    border-bottom-style: solid;
+    border-width: 1px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 6px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: black;
+    background-color: rgb(240, 240, 240);
+}
+
+.seperator-top-bar {
+    color: rgb(80, 80, 80);
+    display: inline;
+}
+
+.my-subreddits {
+    margin-left: 3px;
+    margin-right: 5px;
+}
+
+.my-subreddits:hover {
+    text-decoration: none;
+}
+
+.top-bar-div .popular {
+    color: rgb(255, 69, 0);
+    font-weight: bold;
+}
+
+.more {
+    font-weight: bold;
+    float: right;
+}
+
+.reddit-logo-div {
+    background-color: rgb(206, 227, 248);
+    height: 28.5px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: rgb(95, 153, 207);
+}
+
+.reddit-logo {
+    width: 70px;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+.reddit-logo-options {
+    color: black;
+    text-decoration: none;
+    margin-left: 5px;
+    font-size: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    background-color: rgb(239, 247, 255);
+    color: rgb(51, 102, 153);
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.reddit-logo-options:active {
+    color: rgb(255, 69, 0);
+    border-color: rgb(95, 153, 207) !important;
+    border-left: solid;
+    border-top: solid;
+    border-right: solid;
+    border-width: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.sign-up-div {
+    float: right;
+    margin-top: 16.5px;
+    padding-left: 3px;
+    padding-right: 1px;
+    padding-top: 2px;
+    background-color: rgb(239, 247, 255);
+    height: 10px;
+    width: 130px;
+    color: gray;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 6px;
+    border-top-left-radius: 5px;
+}
+
+.join-text {
+    margin: 0;
+}
+
+.log-in-button,
+.sign-up-button {
+    color: rgb(51, 102, 153);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 6px;
+}
+
+.log-in-button:hover,
+.sign-up-button:hover {
+    cursor: pointer;
+}
+
+.popular-div {
+    margin-top: 4px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-bottom: 2px;
+    border-bottom-style: dotted;
+    border-width: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 8px;
+}
+
+.popular-in {
+    display: inline;
+    margin-left: 7px;
+}
+
+.country-dropdown {
+    color: rgb(128, 128, 128);
+    font-weight: bold;
+}
+
+.post-div {
+    display: flex;
+    align-items: center;
+}
+
+.post-number {
+    margin-left: 12px;
+    font-size: 12px;
+    color: gray;
+    font-family: Arial;
+}
+
+.rating-buttons-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rate-up:hover,
+.rate-down:hover {
+    cursor: pointer;
+}
+
+.rate-up,
+.rate-down,
+.rating {
+    margin: -1.5px;
+    font-size: 10px;
+    color: gray;
+    font-weight: bold;
+}
+
+.post-image {
+    width: 30px;
+    margin-right: 8px;
+}
+
+.post-title {
+    display: block;
+    text-decoration: none;
+    color: blue;
+    font-family: Arial;
+    font-size: 12px;
+    margin-bottom: 1px;
+}
+
+.post-details {
+    color: gray;
+    font-family: Arial;
+    font-size: 7px;
+}
+
+.post-subdetails {
+    margin-top: 1px;
+}
+
+.post-subdetails a {
+    color: gray;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.post-time,
+.post-to {
+    display: inline;
+}
+
+.post-op,
+.post-subreddit {
+    color: rgb(52, 108, 178);
+}
+
+.post-comments:hover,
+.post-share:hover,
+.post-save:hover,
+.post-hide:hover,
+.post-report:hover {
+    text-decoration: underline;
+}
