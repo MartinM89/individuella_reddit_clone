@@ -111,7 +111,7 @@ let postsData = [
         postNumber: 7,
         postRating: '•',
         postImage: "images/post-image.svg",
-        postTitle: "Swedish man dies in South Korea after being defined urget treatment at 21 hospitals",
+        postTitle: "Swedish man dies in South Korea after being denied urget treatment at 21 hospitals",
         postText: "Post text 5",
         postDate: "3",
         postAuthor: "mancinedinburth",
