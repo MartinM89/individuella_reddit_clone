@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", async function () {
             const postDiv = document.createElement('div');
             postDiv.classList.add('post-div');
 
+            const postDate = new Date(post.submitted);
+            const currentDate = new Date();
+            const diffInhours = Math.floor((currentDate - postDate) / (1000 * 60 * 60));
+
             postDiv.innerHTML = `
                 <p class="post-number">${post.id}</p>
                 <div class="rating-buttons-div">
@@ -18,10 +22,10 @@ document.addEventListener("DOMContentLoaded", async function () {
                 <img class="post-image" src="images/post-image.svg" alt="">
                 <div class="post-details">
                     <a class="post-title" href="">${post.title}</a>
-                    <p class="post-time">submitted ${post.postDate} hours ago by </p>
+                    <p class="post-time">submitted ${diffInhours} hours ago by </p>
                     <a class="post-op" href="">${post.username}</a>
                     <p class="post-to"> to </p>
-                    <a class="post-subreddit" href="">${post.subReddit}</a>
+                    <a class="post-subreddit" href="">r/${post.subReddit}</a>
                     <div class="post-subdetails">
                         <a class="post-comments" href="">${post.commentAmount} comments</a>
                         <a class="post-share" href="">share</a>
