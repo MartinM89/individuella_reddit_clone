@@ -1,89 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>reddit: the front page of the internet</title>
     <link rel="stylesheet" href="index.css">
     <link rel="icon" type="image/svg+xml" href="images/post-image.svg">
     <link rel="icon" type="image/png" href="images/post-image.png" sizes="32x32">
-    <script src="fetchData.js"></script>
-    <script src="fetchUserData.js"></script>
-    <script src="populatePost.js"></script>
+
+    <script type="module" src="fetchPostService.js"></script>
+    <script type="module" src="populatePost.js"></script>
+
 </head>
 
 <body>
-    <div class="top-bar-div">
-        <a class="my-subreddits" href="">MY SUBREDDITS &#x1F783</a>
-        <a class="popular" href="">POPULAR</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">ALL</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">USERS</a>
-        <p class="seperator-top-bar"> &vert; </p>
-        <a class="top-bar-links" href="">ASKREDDIT</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">PICS</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">FUNNY</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">MOVIES</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">GAMING</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">WORLDNEWS</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">NEWS</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">TODAYILEARNED</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">NOTTHEONION</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">EXPLAINLIKEIMFIVE</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">MIDLYINTERESTING</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">DIY</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">VIDEOS</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">OLDSCHOOL</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">EUROPE</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">TWOXCHROMOSOMES</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">TIFU</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">MUSIC</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">BOOKS</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">LIFPROTIPS</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">DATAISBEAUTIFUL</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">AWW</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">SCIENCE</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">SPACE</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">SHOWERTHOUGHTS</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">ASKSCIENCE</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">JOKES</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">IAMA</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">SHOWERTHOUGHTS</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">ASKSCIENCE</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="top-bar-links" href="">JOKES</a>
-        <p class="seperator-top-bar"> &ndash; </p>
-        <a class="more" href="">MORE &#187</a>
-    </div>
+    <header>
+        <div class="top-bar-div">
+            <a class="my-subreddits" href="">MY SUBREDDITS &#x1F783</a>
+            <a class="popular" href="">POPULAR</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">ALL</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">USERS</a>
+            <p> &vert; </p>
+            <a class="top-bar-links" href="">ASKREDDIT</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">PICS</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">FUNNY</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">MOVIES</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">GAMING</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">WORLDNEWS</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">NEWS</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">TODAYILEARNED</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">NOTTHEONION</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">EXPLAINLIKEIMFIVE</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">MIDLYINTERESTING</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">DIY</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">VIDEOS</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">OLDSCHOOL</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">EUROPE</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">TWOXCHROMOSOMES</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">TIFU</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">MUSIC</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">BOOKS</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">LIFPROTIPS</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">DATAISBEAUTIFUL</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">AWW</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">SCIENCE</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">SPACE</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">SHOWERTHOUGHTS</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">ASKSCIENCE</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">JOKES</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">IAMA</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">SHOWERTHOUGHTS</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">ASKSCIENCE</a>
+            <p> &ndash; </p>
+            <a class="top-bar-links" href="">JOKES</a>
+            <p> &ndash; </p>
+            <a class="more" href="">MORE &#187</a>
+        </div>
+    </header>
 
     <div class="reddit-logo-div">
         <img class="reddit-logo" src="images/reddit_logo.svg" alt="">
