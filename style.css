@@ -62,9 +62,6 @@ nav {
     float: right;
     border-bottom-style: solid;
     border-width: 1px;
-    /* padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 3px; */
     padding: 2px;
     font-size: 6px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -83,21 +80,32 @@ nav {
 
 .reddit-logo {
     width: 70px;
-    margin-top: 2px;
+    margin-top: 1.9px;
     margin-left: 2px;
     margin-right: 6px;
 }
 
 .reddit-logo-options {
-    color: black;
-    text-decoration: none;
-    font-size: 8px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    background-color: rgb(239, 247, 255);
     color: rgb(51, 102, 153);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: rgb(239, 247, 255);
     padding-left: 4px;
     padding-right: 4px;
+}
+
+#logo-options {
+    border-top-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-color: rgb(95, 153, 207);
+    color: rgb(255, 69, 0);
+    border-width: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+
 }
 
 .reddit-logo-options:active {
@@ -166,7 +174,33 @@ nav {
     gap: 8px;
 }
 
+#post-container input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 11rem;
+    height: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.7rem;
+    padding-left: 0.3rem;
+    border-style: solid;
+    border-width: 1px;
+}
 
+#post-container button {
+    border-style: solid;
+    border-width: 1px;
+    width: 11.55rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.7rem;
+    color: rgb(51, 102, 153);
+    background-color: rgb(235, 243, 252);
+    border-color: rgb(196, 219, 241);
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+    height: 1.3rem;
+    border-top-right-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+    cursor: pointer;
+}
 
 .post-div {
     display: flex;
@@ -252,4 +286,27 @@ nav {
 .post-hide:hover,
 .post-report:hover {
     text-decoration: underline;
+}
+
+#view-more {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.44rem;
+    color: rgb(128, 128, 128);
+    margin-left: 0.25rem;
+}
+
+#next-button {
+    background-color: rgb(238, 238, 238);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.45rem;
+    font-weight: bold;
+    color: rgb(51, 102, 153);
+    border-width: 1px;
+    border-radius: 0.1rem;
+    height: 0.8rem;
+    border-style: solid;
+    border-color: rgb(221, 221, 221);
+    padding-left: 0.15rem;
+    padding-right: 0.15rem;
+    cursor: pointer;
 }

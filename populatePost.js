@@ -2,6 +2,7 @@ import { fetchAllPosts } from './fetchPostService.js';
 
 document.addEventListener("DOMContentLoaded", async function () {
     const posts = await fetchAllPosts();
+    const postsContainer = document.getElementById('posts-container');
 
     if (posts) {
         posts.forEach(post => {
@@ -36,7 +37,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 </div>
             `;
 
-            document.body.appendChild(postDiv);
+            postsContainer.appendChild(postDiv);
         });
     }
 });

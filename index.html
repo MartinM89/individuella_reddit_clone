@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>reddit: the front page of the internet</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/svg+xml" href="images/post-image.svg">
     <link rel="icon" type="image/png" href="images/post-image.png" sizes="32x32">
 
@@ -87,7 +87,6 @@
                 <a class="top-bar-links" href="">ASKSCIENCE</a>
                 <p> &ndash; </p>
                 <a class="top-bar-links" href="">JOKES</a>
-                <p> &ndash; </p>
             </div>
             <a id="more" href="">MORE &#187</a>
 
@@ -96,7 +95,7 @@
 
     <div class="reddit-logo-div">
         <img class="reddit-logo" src="images/reddit_logo.svg" alt="">
-        <a class="reddit-logo-options" href="">hot</a>
+        <a id="logo-options" class="reddit-logo-options" href="">hot</a>
         <a class="reddit-logo-options" href="">new</a>
         <a class="reddit-logo-options" href="">rising</a>
         <a class="reddit-logo-options" href="">controversial</a>
@@ -114,11 +113,15 @@
 
         <div id="post-container">
             <input type="text" placeholder="search">
-            <button>Submit a new link</button>
+            <button>Submit a new links</button>
             <button>Submit a new text post</button>
         </div>
     </div>
 
+    <div id="posts-container"></div>
+
+    <p id="view-more">view more: </p>
+    <button id="next-button">next ></button>
 
 </body>
 
