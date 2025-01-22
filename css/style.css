@@ -167,7 +167,7 @@ nav {
     margin-top: 0.15rem;
 }
 
-#post-container input {
+#search-bar input {
     width: 16.35rem;
     height: 1.6rem;
     font-size: 0.9rem;
@@ -176,8 +176,20 @@ nav {
     border-width: 0.05rem;
 }
 
-#post-container input:focus {
+#search-bar input:focus {
     outline: none;
+}
+
+#magnifying-glass {
+    color: rgb(128, 128, 128);
+    height: 13px;
+    width: 13px;
+    background-image: url(../images/sprite-reddit.png);
+    background-position: -19px -1696px;
+    cursor: pointer;
+    position: relative;
+    left: 15.6rem;
+    bottom: 1.4rem;
 }
 
 #post-container button {
@@ -270,12 +282,18 @@ nav {
     margin-right: 0.8rem;
 }
 
-.post-title {
-    display: block;
+#post-title {
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
     color: blue;
     font-size: 1.3rem;
     margin-bottom: 0.15rem;
+}
+
+#flex-column {
+    display: flex;
+    flex-direction: row;
 }
 
 #post-preview {
@@ -283,9 +301,8 @@ nav {
     height: 23px;
     background-image: url(../images/sprite-expando.png);
     background-position: 0px -549px;
-    margin-right: 0.2rem;
-    position: relative;
-    top: 0.9rem;
+    margin-right: 0.3rem;
+    margin-top: 0.13rem;
     cursor: pointer;
 }
 
@@ -293,25 +310,34 @@ nav {
     background-position: 0px -433px;
 }
 
-.post-details {
+#post-details {
+    display: flex;
+    flex-direction: column;
     color: gray;
     font-size: 0.6rem;
 }
 
-/* remove classes for post-details and make id and remove classes inside the div */
-.post-details a {
+#post-details a {
     text-decoration: none;
 }
 
-.post-subdetails {
+#post-details a:hover {
+    text-decoration: underline;
+}
+
+#post-subdetails {
     margin-top: 0.12rem;
 }
 
-.post-subdetails a {
+#post-subdetails a {
     color: gray;
     text-decoration: none;
     font-weight: bold;
     margin-right: 0.2rem;
+}
+
+#post-subdetails a:hover {
+    text-decoration: underline;
 }
 
 .post-time,
@@ -324,36 +350,30 @@ nav {
     color: rgb(52, 108, 178);
 }
 
-.post-comments:hover,
-.post-share:hover,
-.post-save:hover,
-.post-hide:hover,
-.post-report:hover {
-    text-decoration: underline;
-}
-
 #view-more-div {
     margin-top: 0.4rem;
 }
 
 #view-more-div p {
-    font-size: 0.65rem;
+    font-size: 0.8rem;
     color: rgb(128, 128, 128);
     margin-left: 0.4rem;
 }
 
 #view-more-div button {
     background-color: rgb(238, 238, 238);
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     font-weight: bold;
     color: rgb(51, 102, 153);
     border-width: 0.05rem;
     border-radius: 0.2rem;
-    height: 1.2rem;
+    height: 1.25rem;
+    width: 3.5rem;
     border-style: solid;
     border-color: rgb(221, 221, 221);
     padding-left: 0.2rem;
     padding-right: 0.2rem;
+    margin-top: 0.3rem;
     cursor: pointer;
 }
 
@@ -364,6 +384,12 @@ footer {
     justify-content: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+#footer-box {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.2rem;
 }
 
 footer a {
@@ -383,18 +409,20 @@ footer p {
     padding-bottom: 0.4rem;
     border-bottom: solid;
     border-width: 0.07rem;
-    ;
 }
 
 footer div {
     display: flex;
     margin-left: 0.1rem;
     margin-right: 0.1rem;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 0.2rem;
     padding: 0.2rem;
     padding-top: 0;
+}
+
+footer #help {
+    border-left: 0.05rem solid rgb(128, 128, 128);
+    border-right: 0.05rem solid rgb(128, 128, 128);
+    padding: 0 1rem;
 }
 
 footer #about,
@@ -404,4 +432,5 @@ footer #apps {
     flex-direction: column;
     text-align: left;
     gap: 0.09rem;
+    margin: 0.38rem 0.38rem;
 }

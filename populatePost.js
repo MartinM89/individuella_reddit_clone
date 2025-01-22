@@ -21,19 +21,25 @@ document.addEventListener("DOMContentLoaded", async function () {
                     <p id="rate-down"></p>
                 </div>
                 <img id="post-image" src="images/post-image.svg" alt="">
-                <div id="post-preview"></div>
-                <div class="post-details">
-                    <a class="post-title" href="">${post.title}</a>
-                    <p class="post-time">submitted ${diffInhours} hours ago by </p>
-                    <a class="post-op" href="">${post.username}</a>
-                    <p class="post-to"> to </p>
-                    <a class="post-subreddit" href="">r/${post.subReddit}</a>
-                    <div class="post-subdetails">
-                        <a class="post-comments" href="">${post.commentAmount} comments</a>
-                        <a class="post-share" href="">share</a>
-                        <a class="post-save" href="">save</a>
-                        <a class="post-hide" href="">hide</a>
-                        <a class="post-report" href="">report</a>
+                <div id="flex">
+                    <a id="post-title" href="">${post.title}</a>
+                    <div id="flex-column">
+                        <div id="post-preview"></div>
+                        <div id="post-details">
+                            <div>
+                                <p class="post-time">submitted ${diffInhours} hours ago by </p>
+                                <a class="post-op" href="">${post.username}</a>
+                                <p class="post-to"> to </p>
+                                <a class="post-subreddit" href="">r/${post.subReddit}</a>
+                            </div>
+                            <div id="post-subdetails">
+                                <a class="post-comments" href="">${post.commentAmount} comments</a>
+                                <a class="post-share" href="">share</a>
+                                <a class="post-save" href="">save</a>
+                                <a class="post-hide" href="">hide</a>
+                                <a class="post-report" href="">report</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             `;
