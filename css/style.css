@@ -149,6 +149,7 @@ nav {
     margin-top: 0.1rem;
     margin-left: 0.35rem;
     margin-right: 0.6rem;
+    margin-bottom: 0.5rem;
     padding-bottom: 0.2rem;
     border-bottom-style: dotted;
     border-width: 0.1px;
@@ -189,17 +190,21 @@ nav {
     border-style: solid;
     border-width: 0.05rem;
     width: 15rem;
+    height: 1.7rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     color: rgb(51, 102, 153);
     background-color: rgb(235, 243, 252);
     border-color: rgb(196, 219, 241);
     padding-left: 0.3rem;
     padding-right: 0.3rem;
-    height: 1.5rem;
-    border-top-right-radius: 0.6rem;
-    border-bottom-right-radius: 0.6rem;
+    border-radius: 0.8rem;
     cursor: pointer;
+}
+
+#post-container button:hover {
+    background-color: rgb(113, 163, 210);
+    color: white;
 }
 
 .post-div {
@@ -208,21 +213,21 @@ nav {
 }
 
 .post-number {
-    margin-left: 12px;
-    font-size: 12px;
+    margin-left: 0.8rem;
+    font-size: 1rem;
     color: gray;
     font-family: Arial;
     text-align: center;
-    min-width: 0.8rem;
+    min-width: 1.1rem;
 }
 
 .rating-buttons-div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
-    min-width: 0.8rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    min-width: 1rem;
 }
 
 .rate-up:hover,
@@ -233,15 +238,15 @@ nav {
 .rate-up,
 .rate-down,
 .rating {
-    margin: -1.5px;
-    font-size: 10px;
+    margin: -0.1rem;
+    font-size: 0.9rem;
     color: gray;
     font-weight: bold;
 }
 
 .post-image {
-    width: 30px;
-    margin-right: 8px;
+    width: 2.8rem;
+    margin-right: 0.6rem;
 }
 
 .post-title {
@@ -249,25 +254,25 @@ nav {
     text-decoration: none;
     color: blue;
     font-family: Arial;
-    font-size: 12px;
-    margin-bottom: 1px;
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
 }
 
 .post-details {
     color: gray;
     font-family: Arial;
-    font-size: 7px;
+    font-size: 0.6rem;
 }
 
 .post-subdetails {
-    margin-top: 1px;
+    margin-top: 0.1rem;
 }
 
 .post-subdetails a {
     color: gray;
     text-decoration: none;
     font-weight: bold;
-    margin-right: 3px;
+    margin-right: 0.2rem;
 }
 
 .post-time,
@@ -288,26 +293,30 @@ nav {
     text-decoration: underline;
 }
 
-#view-more {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.44rem;
-    color: rgb(128, 128, 128);
-    margin-left: 0.25rem;
+#view-more-div {
+    margin-top: 0.4rem;
 }
 
-#next-button {
+#view-more-div p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.65rem;
+    color: rgb(128, 128, 128);
+    margin-left: 0.4rem;
+}
+
+#view-more-div button {
     background-color: rgb(238, 238, 238);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.45rem;
+    font-size: 0.7rem;
     font-weight: bold;
     color: rgb(51, 102, 153);
-    border-width: 1px;
-    border-radius: 0.1rem;
-    height: 0.8rem;
+    border-width: 0.05rem;
+    border-radius: 0.2rem;
+    height: 1.2rem;
     border-style: solid;
     border-color: rgb(221, 221, 221);
-    padding-left: 0.15rem;
-    padding-right: 0.15rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
     cursor: pointer;
 }
 
@@ -315,15 +324,16 @@ footer {
     display: flex;
     color: rgb(128, 128, 128);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.7rem;
+    font-size: 1rem;
     justify-content: center;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
 footer a {
     color: rgb(51, 102, 178);
     text-decoration: none;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
 }
 
 footer a:hover {
