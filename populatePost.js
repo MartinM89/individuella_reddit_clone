@@ -16,11 +16,11 @@ document.addEventListener("DOMContentLoaded", async function () {
             postDiv.innerHTML = `
                 <p class="post-number">${post.id}</p>
                 <div class="rating-buttons-div">
-                    <p class="rate-up">&uArr;</p>
-                    <p class="rating">${post.rating}</p>
-                    <p class="rate-down">&dArr;</p>
+                    <p id="rate-up"></p>
+                    <p id="rating">${post.rating}</p>
+                    <p id="rate-down"></p>
                 </div>
-                <img class="post-image" src="images/post-image.svg" alt="">
+                <img id="post-image" src="images/post-image.svg" alt="">
                 <div class="post-details">
                     <a class="post-title" href="">${post.title}</a>
                     <p class="post-time">submitted ${diffInhours} hours ago by </p>
