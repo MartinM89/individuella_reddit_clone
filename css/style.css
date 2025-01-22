@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .navbar a {
@@ -28,7 +29,6 @@ nav {
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
     font-size: 0.6rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
     background-color: rgb(240, 240, 240);
     width: 100%;
@@ -64,7 +64,6 @@ nav {
     border-width: 0.1rem;
     padding: 0.23rem;
     font-size: 0.6rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: black;
     background-color: rgb(240, 240, 240);
     text-decoration: none;
@@ -88,7 +87,6 @@ nav {
 
 .reddit-logo-div a {
     color: rgb(51, 102, 153);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.7rem;
     font-weight: bold;
     text-decoration: none;
@@ -129,7 +127,6 @@ nav {
     height: 1.1rem;
     width: 17.4rem;
     color: gray;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.8rem;
     border-top-left-radius: 0.5rem;
 }
@@ -137,7 +134,6 @@ nav {
 .log-in-button,
 .sign-up-button {
     color: rgb(51, 102, 153);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.8rem;
 }
 
@@ -154,7 +150,6 @@ nav {
     padding-bottom: 0.2rem;
     border-bottom-style: dotted;
     border-width: 0.1px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.8rem;
     display: block;
 }
@@ -173,11 +168,9 @@ nav {
 }
 
 #post-container input {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     width: 16.35rem;
     height: 1.6rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     padding-left: 0.3rem;
     border-style: solid;
     border-width: 0.05rem;
@@ -192,7 +185,6 @@ nav {
     border-width: 0.05rem;
     width: 17rem;
     height: 2rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.8rem;
     color: rgb(81, 120, 158);
     background-color: rgb(235, 243, 252);
@@ -211,6 +203,7 @@ nav {
 .post-div {
     display: flex;
     align-items: center;
+    margin-bottom: 0.4rem;
 }
 
 .post-number {
@@ -219,7 +212,8 @@ nav {
     color: rgb(128, 128, 128);
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    min-width: 1.1rem;
+    font-size: 1.2rem;
+    min-width: 1.3rem;
 }
 
 .rating-buttons-div {
@@ -228,8 +222,8 @@ nav {
     align-items: center;
     padding-left: 0.7rem;
     padding-right: 0.7rem;
-    gap: 0.1rem;
-    min-width: 2rem;
+    gap: 0.14rem;
+    min-width: 2.2rem;
 }
 
 #rate-up {
@@ -237,8 +231,6 @@ nav {
     height: 15px;
     background-image: url(../images/sprite-reddit.png);
     background-position: -21px -1676px;
-    background-repeat: no-repeat;
-    display: inline-block;
 }
 
 #rate-down {
@@ -246,8 +238,6 @@ nav {
     height: 15px;
     background-image: url(../images/sprite-reddit.png);
     background-position: -108px -1654px;
-    background-repeat: no-repeat;
-    display: inline-block;
 }
 
 #rate-up:active {
@@ -264,9 +254,8 @@ nav {
 }
 
 #rating {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: rgb(182, 182, 182);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
 }
 
@@ -277,22 +266,35 @@ nav {
 }
 
 #post-image {
-    width: 2.8rem;
-    margin-right: 0.6rem;
+    width: 3.4rem;
+    margin-right: 0.8rem;
 }
 
 .post-title {
     display: block;
     text-decoration: none;
     color: blue;
-    font-family: Arial;
-    font-size: 1rem;
-    margin-bottom: 0.1rem;
+    font-size: 1.3rem;
+    margin-bottom: 0.15rem;
+}
+
+#post-preview {
+    width: 23px;
+    height: 23px;
+    background-image: url(../images/sprite-expando.png);
+    background-position: 0px -549px;
+    margin-right: 0.2rem;
+    position: relative;
+    top: 0.9rem;
+    cursor: pointer;
+}
+
+#post-preview:active {
+    background-position: 0px -433px;
 }
 
 .post-details {
     color: gray;
-    font-family: Arial;
     font-size: 0.6rem;
 }
 
@@ -302,7 +304,7 @@ nav {
 }
 
 .post-subdetails {
-    margin-top: 0.1rem;
+    margin-top: 0.12rem;
 }
 
 .post-subdetails a {
@@ -335,7 +337,6 @@ nav {
 }
 
 #view-more-div p {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.65rem;
     color: rgb(128, 128, 128);
     margin-left: 0.4rem;
@@ -343,7 +344,6 @@ nav {
 
 #view-more-div button {
     background-color: rgb(238, 238, 238);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 0.7rem;
     font-weight: bold;
     color: rgb(51, 102, 153);
@@ -360,7 +360,6 @@ nav {
 footer {
     display: flex;
     color: rgb(128, 128, 128);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1rem;
     justify-content: center;
     margin-top: 1rem;

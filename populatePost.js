@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     <p id="rate-down"></p>
                 </div>
                 <img id="post-image" src="images/post-image.svg" alt="">
+                <div id="post-preview"></div>
                 <div class="post-details">
                     <a class="post-title" href="">${post.title}</a>
                     <p class="post-time">submitted ${diffInhours} hours ago by </p>
