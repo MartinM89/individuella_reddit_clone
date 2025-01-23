@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 </div>
                 <img id="post-image" src="images/post-image.svg" alt="">
                 <div id="flex">
-                    <a id="post-title" href="">${post.title}</a>
+                    <a id="post-title" href="html/post-page.html">${post.title}</a>
                     <div id="flex-column">
                         <div id="post-preview"></div>
                         <div id="post-details">
