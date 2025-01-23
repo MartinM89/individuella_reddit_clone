@@ -1,0 +1,103 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    margin: 0;
+}
+
+#header {
+    font-weight: bold;
+
+}
+
+#post-window {
+    display: flex;
+    flex-direction: column;
+    width: 36rem;
+}
+
+#post-info {
+    font-size: 0.9rem;
+    border: solid 0.1rem rgb(255, 165, 0);
+    background-color: rgb(246, 230, 159);
+    padding: 0.4rem;
+    margin: 1rem 0;
+}
+
+#post-title {
+    font-weight: bold;
+    background-color: rgb(206, 227, 248);
+    padding: 0.7rem;
+    border-radius: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+#post-title textarea {
+    width: 98%;
+    height: 3rem;
+    margin-top: 0.4rem;
+    border-style: solid 0.1rem rgb(128, 128, 128);
+}
+
+#post-title span {
+    color: red;
+}
+
+#post-content {
+    font-weight: bold;
+    background-color: rgb(206, 227, 248);
+    padding: 0.7rem;
+    border-radius: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+#post-content textarea {
+    width: 98%;
+    height: 6rem;
+    margin-top: 0.4rem;
+    border: solid 0.1rem rgb(128, 128, 128);
+    display: block;
+    overflow: auto;
+    resize: both;
+}
+
+#post-content span {
+    font-weight: normal;
+    color: rgb(128, 128, 128);
+}
+
+#required {
+    font-size: 0.7rem;
+}
+
+#submit-post {
+    margin-top: 0.4rem;
+}
+
+#submit-post button {
+    height: 1.5rem;
+    width: 3.8rem;
+    margin-right: 0.5rem;
+    background-color: rgb(239, 239, 239);
+    border-width: 0.1rem;
+    border-radius: 0.2rem;
+}
+
+#submit-post button:hover {
+    cursor: pointer;
+    background-color: rgb(229, 229, 229);
+}
+
+#submit-post button:active {
+    background-color: rgb(239, 239, 239);
+}
+
+#submit-post select {
+    height: 1.5rem;
+    width: auto;
+    background-color: rgb(239, 239, 239);
+    border-width: 0.1rem;
+    border-radius: 0.2rem;
+    border-color: black;
+}
