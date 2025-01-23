@@ -296,7 +296,7 @@ nav {
     flex-direction: row;
 }
 
-#post-preview {
+.post-preview {
     width: 23px;
     height: 23px;
     background-image: url(../images/sprite-expando.png);
@@ -306,7 +306,7 @@ nav {
     cursor: pointer;
 }
 
-#post-preview:active {
+.post-preview:active {
     background-position: 0px -433px;
 }
 
@@ -433,4 +433,11 @@ footer #apps {
     text-align: left;
     gap: 0.09rem;
     margin: 0.38rem 0.38rem;
+}
+
+.post-preview-content {
+    /* Your styles here */
+    color: blue;
+    font-size: 1rem;
+    margin-top: 0.5rem;
 }
