@@ -36,9 +36,6 @@ document.addEventListener("DOMContentLoaded", async function () {
                 postTime = diffInhours + ' hours';
             }
 
-            const postPreview = post.content.substring(0, 60);
-            postPreview.trim() + '...';
-
             postDiv.innerHTML = `
                 <p class="post-number">${postNumber}</p>
                 <div class="rating-buttons-div">
@@ -83,7 +80,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     pElement.remove();
                 } else {
                     const newPElement = document.createElement('p');
-                    newPElement.textContent = post.content.substring(0, 60) + '...';
+                    newPElement.textContent = post.content.substring(0, 60).trim() + '...';
                     postPreviewElement.insertAdjacentElement('afterend', newPElement);
                 }
             });

@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         if (subRedditsPrints < subRedditsLength) {
             subRedditDiv.innerHTML = `
-                <a href="">${subReddit.name}</a>
+                <a href="../index.html">${subReddit.name}</a>
                 <p>&ndash;</p>
             `;
         } else {
@@ -25,5 +25,4 @@ document.addEventListener("DOMContentLoaded", async function () {
         subRedditContainer.appendChild(subRedditDiv);
         subRedditsPrints++;
     });
-
 });
