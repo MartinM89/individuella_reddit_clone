@@ -26,12 +26,16 @@ export async function fetchAllPosts() {
     }
 }
 
-/*
-id
-rating
-title
-submitted
-username
-subReddit
-commentAmount
-*/
+export async function fetchSubReddits() {
+    try {
+        const response = await fetch('http://localhost:5049/api/postgrespost/getsubreddits')
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        const subReddits = await response.json();
+        console.log(subReddits);
+        return subReddits.$values;
+    } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+    }
+}

@@ -36,7 +36,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 postTime = diffInhours + ' hours';
             }
 
-            const postPreview = post.content.substring(0, 60) + '...';
+            const postPreview = post.content.substring(0, 60);
+            postPreview.trim() + '...';
 
             postDiv.innerHTML = `
                 <p class="post-number">${postNumber}</p>
@@ -87,6 +88,5 @@ document.addEventListener("DOMContentLoaded", async function () {
                 }
             });
         });
-
     }
 });

@@ -435,9 +435,5 @@ footer #apps {
     margin: 0.38rem 0.38rem;
 }
 
-.post-preview-content {
-    /* Your styles here */
-    color: blue;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-}
+[id^="post-preview-"]
+/* nav gap */
