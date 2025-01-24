@@ -4,7 +4,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#reddit-logo-div {
+/* #header-nav {
     background-color: rgb(206, 227, 248);
     height: 2.81rem;
     border-bottom-style: solid;
@@ -12,14 +12,14 @@ body {
     border-color: rgb(95, 153, 207);
 }
 
-#reddit-logo-div img {
+#header-nav img {
     width: 7rem;
     margin-top: 0.15rem;
     margin-left: 0.2rem;
     margin-right: 0.4rem;
 }
 
-#reddit-logo-div a {
+#header-nav a {
     color: rgb(51, 102, 153);
     font-size: 0.7rem;
     font-weight: bold;
@@ -38,7 +38,7 @@ body {
     border-width: 0.05rem;
 }
 
-#reddit-logo-div a:active {
+#header-nav a:active {
     color: rgb(255, 69, 0);
     border-color: rgb(95, 153, 207);
     border-left-style: solid;
@@ -48,7 +48,7 @@ body {
     padding-left: 0.24rem;
     padding-right: 0.24rem;
     margin-bottom: 1rem;
-    /* Make button go down when active */
+    Make button go down when active
 }
 
 #sign-up-div {
@@ -75,7 +75,7 @@ body {
 
 #sign-up-div span:hover {
     cursor: pointer;
-}
+} */
 
 #popular-search {
     margin-top: 0.1rem;
