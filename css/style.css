@@ -4,48 +4,41 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: black;
-}
-
-.navbar a:hover {
-    text-decoration: underline;
-}
-
-.navbar a,
-p {
-    display: inline;
-}
-
 nav {
     display: flex;
     align-items: center;
-}
-
-.navbar {
     border-bottom-style: solid;
     border-width: 0.1rem;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
-    font-size: 0.6rem;
-    color: black;
     background-color: rgb(240, 240, 240);
     width: 100%;
     gap: 0.15rem;
-    align-items: center;
-    overflow-x: hidden;
-    white-space: nowrap;
+    font-size: 0.7rem;
+}
+
+nav p {
+    display: inline;
+    margin: 0;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
 }
 
 #popular {
     color: rgb(255, 69, 0);
     font-weight: bold;
-
 }
 
-.seperator-top-bar {
-    color: rgb(80, 80, 80);
+#top-subreddits {
+    display: flex;
+    gap: 0.15rem;
 }
 
 #my-subreddits {
@@ -53,20 +46,11 @@ nav {
     margin-right: 0.4rem;
 }
 
-.my-subreddits:hover {
-    text-decoration: none;
-}
-
 #more-button {
     font-weight: bold;
-    float: right;
-    border-bottom-style: solid;
-    border-width: 0.1rem;
-    padding: 0.23rem;
-    font-size: 0.6rem;
-    color: black;
-    background-color: rgb(240, 240, 240);
-    text-decoration: none;
+    margin-left: auto;
+    margin-right: 0.2rem;
+    overflow-x: hidden;
     white-space: nowrap;
 }
 
@@ -434,6 +418,3 @@ footer #apps {
     gap: 0.09rem;
     margin: 0.38rem 0.38rem;
 }
-
-[id^="post-preview-"]
-/* nav gap */
