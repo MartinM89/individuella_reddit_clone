@@ -235,6 +235,7 @@ body {
     font-size: 0.8rem;
     color: rgb(128, 128, 128);
     margin-left: 0.4rem;
+    display: inline;
 }
 
 #view-more-div button {
@@ -252,62 +253,4 @@ body {
     padding-right: 0.2rem;
     margin-top: 0.3rem;
     cursor: pointer;
-}
-
-footer {
-    display: flex;
-    color: rgb(128, 128, 128);
-    font-size: 1rem;
-    justify-content: center;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-#footer-box {
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 0.2rem;
-}
-
-footer a {
-    color: rgb(51, 102, 178);
-    text-decoration: none;
-    font-size: 0.8rem;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-footer p {
-    margin-bottom: 0.2rem;
-    margin-top: 0;
-    padding-top: 0.2rem;
-    padding-bottom: 0.4rem;
-    border-bottom: solid;
-    border-width: 0.07rem;
-}
-
-footer div {
-    display: flex;
-    margin-left: 0.1rem;
-    margin-right: 0.1rem;
-    padding: 0.2rem;
-    padding-top: 0;
-}
-
-footer #help {
-    border-left: 0.05rem solid rgb(128, 128, 128);
-    border-right: 0.05rem solid rgb(128, 128, 128);
-    padding: 0 1rem;
-}
-
-footer #about,
-footer #help,
-footer #apps {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    gap: 0.09rem;
-    margin: 0.38rem 0.38rem;
 }
