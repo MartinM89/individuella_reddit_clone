@@ -17,6 +17,7 @@
     <script type="module" src="../javascript/populateNavbar.js"></script>
     <script type="module" src="../javascript/printHeaderNav.js"></script>
     <script type="module" src="../javascript/printFooter.js"></script>
+    <script type="module" src="../javascript/createPost.js"></script>
 </head>
 
 <body>
@@ -30,25 +31,27 @@
             further
             in the text
             field is not. Beginning your title with "vote up if" is violation of intergalactic law.</p>
-        <div id="post-title">
-            <p><span>*</span>title</p>
-            <textarea name="" id=""></textarea>
-        </div>
-        <div id="post-content">
-            <p>text <span>(optional)</span></p>
-            <textarea name="" id=""></textarea>
-        </div>
-        <p id="required">*required</p>
-        <div id="submit-post">
-            <button>submit</button>
-            <select name="users">
-                <option id="select" value="select-user">select user</option>
-                <option value="user1">user_1</option>
-                <option value="user2">user_2</option>
-                <option value="user3">user_3</option>
-                <option value="user4">user_4</option>
-            </select>
-        </div>
+        <form action="" id="create-post-form">
+            <div id="post-title">
+                <p><span>*</span>title</p>
+                <textarea name="" id="create-post-title" required></textarea>
+            </div>
+            <div id="post-content">
+                <p>text <span>(optional)</span></p>
+                <textarea name="" id="create-post-content" required></textarea>
+            </div>
+            <p id="required">*required</p>
+            <div id="submit-post">
+                <button>submit</button>
+                <select name="users">
+                    <option id="select" value="select-user">select user</option>
+                    <option value="user1">user_1</option>
+                    <option value="user2">user_2</option>
+                    <option value="user3">user_3</option>
+                    <option value="user4">user_4</option>
+                </select>
+            </div>
+        </form>
     </div>
 
     <footer></footer>
