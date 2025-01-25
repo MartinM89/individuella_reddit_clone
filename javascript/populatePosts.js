@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             postDiv.innerHTML = `
                 <p class="post-number">${postNumber}</p>
                 <div class="rating-buttons-div">
-                    <p id="rate-up"></p>
-                    <p id="rating">${postRating}</p>
-                    <p id="rate-down"></p>
+                    <p id="rate-up-${postNumber}" class="rate-up" style="background-position: -21px -1676px;"></p>
+                    <p id="rating-${postNumber}" class="post-rating">${postRating}</p>
+                    <p id="rate-down-${postNumber}" class="rate-down" style="background-position: -108px -1654px;"></p>
                 </div>
                 <img id="post-image" src="images/post-image.svg" alt="">
                 <div id="flex">
@@ -80,6 +80,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 const pElement = postPreviewElement.nextElementSibling;
                 if (pElement && pElement.tagName === 'P') {
                     pElement.remove();
+
+                    postPreviewElement.style.backgroundPosition = '0px -549px';
+
                     postDetailsElement.style.display = 'flex';
                     postDetailsElement.style.flexDirection = 'column';
                     postDetailsElement.style.color = 'gray';
@@ -88,8 +91,43 @@ document.addEventListener("DOMContentLoaded", async function () {
                     const newPElement = document.createElement('p');
                     newPElement.classList.add('post-preview-content');
                     newPElement.textContent = post.content.substring(0, 60).trim() + '...';
+
+                    postPreviewElement.style.backgroundPosition = '0px -433px';
                     postPreviewElement.insertAdjacentElement('afterend', newPElement);
+
                     postDetailsElement.style.display = 'none';
+                }
+            });
+        });
+
+        posts.forEach((_post, index) => {
+            const postRateUpElement = document.getElementById(`rate-up-${index + 1}`);
+            const postRateDownElement = document.getElementById(`rate-down-${index + 1}`);
+            const postRatingElement = document.getElementById(`rating-${index + 1}`);
+            postRateUpElement.addEventListener('click', function () {
+                if (postRateUpElement.style.backgroundPosition === '-21px -1676px') {
+                    postRateUpElement.style.backgroundPosition = '-42px -1676px';
+                    postRatingElement.style.color = 'rgb(255, 140, 97)';
+                    postRateDownElement.style.backgroundPosition = '-108px -1654px';
+                } else {
+                    postRateUpElement.style.backgroundPosition = '-21px -1676px';
+                    postRatingElement.style.color = 'rgb(182, 182, 182)';
+                }
+            });
+        });
+
+        posts.forEach((_post, index) => {
+            const postRateUpElement = document.getElementById(`rate-up-${index + 1}`);
+            const postRateDownElement = document.getElementById(`rate-down-${index + 1}`);
+            const postRatingElement = document.getElementById(`rating-${index + 1}`);
+            postRateDownElement.addEventListener('click', function () {
+                if (postRateDownElement.style.backgroundPosition === '-108px -1654px') {
+                    postRateDownElement.style.backgroundPosition = '0px -1676px';
+                    postRatingElement.style.color = 'rgb(148, 148, 255)';
+                    postRateUpElement.style.backgroundPosition = '-21px -1676px';
+                } else {
+                    postRateDownElement.style.backgroundPosition = '-108px -1654px';
+                    postRatingElement.style.color = 'rgb(182, 182, 182)';
                 }
             });
         });
