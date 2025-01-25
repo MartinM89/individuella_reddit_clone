@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                     <div id="flex-column">
                         <div id="post-preview-${postNumber}" class="post-preview"></div>
                         <div id="post-details">
+                        <div id="post-details-${postNumber}">
                             <div>
                                 <p class="post-time">submitted ${postTime} ago by </p>
                                 <a class="post-op" href="">${post.username}</a>
@@ -74,14 +75,21 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         posts.forEach((post, index) => {
             const postPreviewElement = document.getElementById(`post-preview-${index + 1}`);
+            const postDetailsElement = document.getElementById(`post-details-${index + 1}`);
             postPreviewElement.addEventListener('click', function () {
                 const pElement = postPreviewElement.nextElementSibling;
                 if (pElement && pElement.tagName === 'P') {
                     pElement.remove();
+                    postDetailsElement.style.display = 'flex';
+                    postDetailsElement.style.flexDirection = 'column';
+                    postDetailsElement.style.color = 'gray';
+                    postDetailsElement.style.fontSize = '0.6rem';
                 } else {
                     const newPElement = document.createElement('p');
+                    newPElement.classList.add('post-preview-content');
                     newPElement.textContent = post.content.substring(0, 60).trim() + '...';
                     postPreviewElement.insertAdjacentElement('afterend', newPElement);
+                    postDetailsElement.style.display = 'none';
                 }
             });
         });

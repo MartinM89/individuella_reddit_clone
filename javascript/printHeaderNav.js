@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (headerNavContainer) {
         headerNavContainer.innerHTML = `
-            <img src="../images/reddit_logo.svg" alt="">
+            <a href="../index.html">
+                <img src="../images/reddit_logo.svg" alt="">
+             </a>
             <a id="logo-options" href="">hot</a>
             <a href="">new</a>
             <a href="">rising</a>

@@ -4,79 +4,6 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* #header-nav {
-    background-color: rgb(206, 227, 248);
-    height: 2.81rem;
-    border-bottom-style: solid;
-    border-width: 0.05rem;
-    border-color: rgb(95, 153, 207);
-}
-
-#header-nav img {
-    width: 7rem;
-    margin-top: 0.15rem;
-    margin-left: 0.2rem;
-    margin-right: 0.4rem;
-}
-
-#header-nav a {
-    color: rgb(51, 102, 153);
-    font-size: 0.7rem;
-    font-weight: bold;
-    text-decoration: none;
-    background-color: rgb(239, 247, 255);
-    padding-left: 0.3rem;
-    padding-right: 0.3rem;
-}
-
-#logo-options {
-    color: rgb(255, 69, 0) !important;
-    border-color: rgb(95, 153, 207);
-    border-top-style: solid;
-    border-right-style: solid;
-    border-left-style: solid;
-    border-width: 0.05rem;
-}
-
-#header-nav a:active {
-    color: rgb(255, 69, 0);
-    border-color: rgb(95, 153, 207);
-    border-left-style: solid;
-    border-top-style: solid;
-    border-right-style: solid;
-    border-width: 0.05rem;
-    padding-left: 0.24rem;
-    padding-right: 0.24rem;
-    margin-bottom: 1rem;
-    Make button go down when active
-}
-
-#sign-up-div {
-    float: right;
-    margin-top: 1.57rem;
-    padding-left: 0.2rem;
-    padding-right: 0.1rem;
-    padding-top: 0.15rem;
-    background-color: rgb(239, 247, 255);
-    height: 1.1rem;
-    width: 17.4rem;
-    color: gray;
-    font-size: 0.8rem;
-    border-top-left-radius: 0.5rem;
-}
-
-#sign-up-div p {
-    margin: 0;
-}
-
-#sign-up-div span {
-    color: rgb(51, 102, 153);
-}
-
-#sign-up-div span:hover {
-    cursor: pointer;
-} */
-
 #popular-search {
     margin-top: 0.1rem;
     margin-left: 0.35rem;
@@ -231,6 +158,7 @@ body {
     margin-bottom: 0.15rem;
 }
 
+/* Change name */
 #flex-column {
     display: flex;
     flex-direction: row;
@@ -248,6 +176,15 @@ body {
 
 .post-preview:active {
     background-position: 0px -433px;
+}
+
+.post-preview-content {
+    border: solid 0.1rem rgb(51, 102, 153);
+    background-color: rgb(250, 250, 250);
+    border-radius: 0.2rem;
+    padding: 0.3rem;
+    margin: 0;
+    font-size: 0.8rem;
 }
 
 #post-details {
