@@ -39,3 +39,17 @@ export async function fetchSubReddits() {
         console.error('There has been a problem with your fetch operation:', error);
     }
 }
+
+export async function fetchUsers() {
+    try {
+        const response = await fetch('http://localhost:5049/api/postgrespost/getusers')
+        if (!response.ok) {
+            throw new error('Network response was not ok ' + response.statusText);
+        }
+        const users = await response.json();
+        console.log(users);
+        return users.$values;
+    } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+    }
+}

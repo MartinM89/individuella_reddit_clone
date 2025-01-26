@@ -2,17 +2,20 @@ document.getElementById('create-post-form').addEventListener('submit', async fun
     event.preventDefault();
 
     const postData = {
-        title: document.getElementById('create-post-title').value,
-        username: document.getElementById('select').value,
-        // username: 'user1',
-        subRedditName: 'Technology',
-        content: document.getElementById('create-post-content').value
+        Title: document.getElementById('create-post-title').value,
+        UserName: document.getElementById('select-user').value,
+        SubRedditName: document.getElementById('select-subreddit').value,
+        Content: document.getElementById('create-post-content').value
     };
 
     console.log('Creating post:', postData);
 
-    const response = await sendPost(postData);
-    console.log('Post created:', response);
+    try {
+        const response = await sendPost(postData);
+        console.log('Post created:', response);
+    } catch (error) {
+        console.error('Error creating post:', error);
+    }
 });
 
 async function sendPost(postData) {
@@ -33,5 +36,6 @@ async function sendPost(postData) {
         return responseData;
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
+        throw error;
     }
 }
