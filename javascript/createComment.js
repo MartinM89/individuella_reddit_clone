@@ -1,11 +1,13 @@
 document.getElementById('create-comment-form').addEventListener('submit', async function (event) {
     event.preventDefault();
 
+    const currentUrl = window.location.href;
+    const postId = currentUrl.split('=')[1];
+
     const commentData = {
         UserName: document.getElementById('select-user').value,
         Content: document.getElementById('create-comment-content').value,
-        UserId: document.getElementById('select-user').value,
-        // PostId: document.getElementById('select-post').value
+        PostId: postId
     };
 
     console.log('Creating post:', commentData);
@@ -20,7 +22,7 @@ document.getElementById('create-comment-form').addEventListener('submit', async 
 
 async function sendComment(commentData) {
     try {
-        const response = await fetch('add correct link to create comments', {
+        const response = await fetch('http://localhost:5049/api/postgrespost/addcomment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -31,6 +33,8 @@ async function sendComment(commentData) {
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
+
+        window.location.reload();
 
         const responseData = await response.json();
         return responseData;

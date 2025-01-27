@@ -32,6 +32,8 @@ async function sendPost(postData) {
             throw new Error('Network response was not ok');
         }
 
+        window.location.href = '/index.html';
+
         const responseData = await response.json();
         return responseData;
     } catch (error) {
