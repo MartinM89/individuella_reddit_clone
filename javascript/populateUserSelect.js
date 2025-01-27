@@ -13,5 +13,3 @@ document.addEventListener("DOMContentLoaded", async function () {
         userContainer.appendChild(userOptions);
     });
 });
-
-// Fix to user

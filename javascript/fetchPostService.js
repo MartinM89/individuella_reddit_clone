@@ -1,6 +1,6 @@
-export async function fetchPost() {
+export async function fetchPost(postId) {
     try {
-        const response = await fetch('http://localhost:5049/api/postgrespost/getpost?id=1');
+        const response = await fetch('http://localhost:5049/api/postgrespost/getpost?id=' + postId);
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
         }
