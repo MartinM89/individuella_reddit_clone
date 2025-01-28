@@ -1,4 +1,6 @@
 import { fetchAllPosts } from './fetchPostService.js';
+import { upVote } from './upVote.js';
+
 
 document.addEventListener("DOMContentLoaded", async function () {
     const posts = await fetchAllPosts();
@@ -112,6 +114,20 @@ document.addEventListener("DOMContentLoaded", async function () {
                 } else {
                     postRateUpElement.style.backgroundPosition = '-21px -1676px';
                     postRatingElement.style.color = 'rgb(182, 182, 182)';
+                }
+
+                // upVote
+                const reactionData = {
+                    PostId: 26,
+                }
+
+                console.log('Upvoting post:', reactionData);
+
+                try {
+                    const response = upVote(reactionData);
+                    console.log('Like sent:', response);
+                } catch (error) {
+                    console.log('Error liking post:', error);
                 }
             });
         });
