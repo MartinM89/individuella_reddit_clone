@@ -107,22 +107,25 @@ document.addEventListener("DOMContentLoaded", async function () {
             const postRateUpElement = document.getElementById(`rate-up-${index + 1}`);
             const postRateDownElement = document.getElementById(`rate-down-${index + 1}`);
             const postRatingElement = document.getElementById(`rating-${index + 1}`);
-            postRateUpElement.addEventListener('click', async function () {
-                if (postRateUpElement.style.backgroundPosition === '-21px -1676px') {
-                    postRateUpElement.style.backgroundPosition = '-42px -1676px';
-                    postRatingElement.style.color = 'rgb(255, 140, 97)';
-                    postRateDownElement.style.backgroundPosition = '-108px -1654px';
-                } else {
-                    postRateUpElement.style.backgroundPosition = '-21px -1676px';
-                    postRatingElement.style.color = 'rgb(182, 182, 182)';
-                }
 
-                // upVote
+            if (post.isLiked) {
+                postRateUpElement.style.backgroundPosition = '-42px -1676px';
+                postRatingElement.style.color = 'rgb(255, 140, 97)';
+                postRateDownElement.style.backgroundPosition = '-108px -1654px';
+            } else if (post.isDisliked) {
+                postRateDownElement.style.backgroundPosition = '0px -1676px';
+                postRatingElement.style.color = 'rgb(148, 148, 255)';
+                postRateUpElement.style.backgroundPosition = '-21px -1676px';
+            } else {
+                postRateUpElement.style.backgroundPosition = '-21px -1676px';
+                postRateDownElement.style.backgroundPosition = '-108px -1654px';
+                postRatingElement.style.color = 'rgb(182, 182, 182)';
+            }
+
+            postRateUpElement.addEventListener('click', async function () {
                 const reactionData = {
                     PostOrCommentId: post.id,
                 }
-
-                console.log('Upvoting post:', reactionData);
 
                 try {
                     const response = await upVote(reactionData);
@@ -131,29 +134,14 @@ document.addEventListener("DOMContentLoaded", async function () {
                 } catch (error) {
                     console.log('Error liking post:', error);
                 }
+
+                console.log('Upvoting post:', reactionData);
             });
-        });
 
-        posts.forEach((post, index) => {
-            const postRateUpElement = document.getElementById(`rate-up-${index + 1}`);
-            const postRateDownElement = document.getElementById(`rate-down-${index + 1}`);
-            const postRatingElement = document.getElementById(`rating-${index + 1}`);
             postRateDownElement.addEventListener('click', async function () {
-                if (postRateDownElement.style.backgroundPosition === '-108px -1654px') {
-                    postRateDownElement.style.backgroundPosition = '0px -1676px';
-                    postRatingElement.style.color = 'rgb(148, 148, 255)';
-                    postRateUpElement.style.backgroundPosition = '-21px -1676px';
-                } else {
-                    postRateDownElement.style.backgroundPosition = '-108px -1654px';
-                    postRatingElement.style.color = 'rgb(182, 182, 182)';
-                }
-
-                // downVote
                 const reactionData = {
                     PostOrCommentId: post.id,
                 }
-
-                console.log('Downvoting post:', reactionData);
 
                 try {
                     const response = await downVote(reactionData);
@@ -162,6 +150,8 @@ document.addEventListener("DOMContentLoaded", async function () {
                 } catch (error) {
                     console.log('Error disliking post:', error);
                 }
+
+                console.log('Downvoting post:', reactionData);
             });
         });
     }

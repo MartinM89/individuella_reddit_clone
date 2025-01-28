@@ -9,7 +9,7 @@ export async function upVote(upVote) {
         });
 
         if (!response.ok) {
-            throw new Error('Network response was not ok') + response.statusText;
+            throw new Error('Network response was not ok');
         }
 
         const responseData = await response.json();
