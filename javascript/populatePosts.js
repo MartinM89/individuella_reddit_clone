@@ -1,5 +1,6 @@
 import { fetchAllPosts } from './fetchPostService.js';
-import { upVote } from './upVote.js';
+import { upVote } from './Reactions/upVote.js';
+import { downVote } from './Reactions/downVote.js';
 
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -102,11 +103,11 @@ document.addEventListener("DOMContentLoaded", async function () {
             });
         });
 
-        posts.forEach((_post, index) => {
+        posts.forEach((post, index) => {
             const postRateUpElement = document.getElementById(`rate-up-${index + 1}`);
             const postRateDownElement = document.getElementById(`rate-down-${index + 1}`);
             const postRatingElement = document.getElementById(`rating-${index + 1}`);
-            postRateUpElement.addEventListener('click', function () {
+            postRateUpElement.addEventListener('click', async function () {
                 if (postRateUpElement.style.backgroundPosition === '-21px -1676px') {
                     postRateUpElement.style.backgroundPosition = '-42px -1676px';
                     postRatingElement.style.color = 'rgb(255, 140, 97)';
@@ -118,13 +119,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
                 // upVote
                 const reactionData = {
-                    PostId: 26,
+                    PostOrCommentId: post.id,
                 }
 
                 console.log('Upvoting post:', reactionData);
 
                 try {
-                    const response = upVote(reactionData);
+                    const response = await upVote(reactionData);
+                    window.location.reload();
                     console.log('Like sent:', response);
                 } catch (error) {
                     console.log('Error liking post:', error);
@@ -132,11 +134,11 @@ document.addEventListener("DOMContentLoaded", async function () {
             });
         });
 
-        posts.forEach((_post, index) => {
+        posts.forEach((post, index) => {
             const postRateUpElement = document.getElementById(`rate-up-${index + 1}`);
             const postRateDownElement = document.getElementById(`rate-down-${index + 1}`);
             const postRatingElement = document.getElementById(`rating-${index + 1}`);
-            postRateDownElement.addEventListener('click', function () {
+            postRateDownElement.addEventListener('click', async function () {
                 if (postRateDownElement.style.backgroundPosition === '-108px -1654px') {
                     postRateDownElement.style.backgroundPosition = '0px -1676px';
                     postRatingElement.style.color = 'rgb(148, 148, 255)';
@@ -144,6 +146,21 @@ document.addEventListener("DOMContentLoaded", async function () {
                 } else {
                     postRateDownElement.style.backgroundPosition = '-108px -1654px';
                     postRatingElement.style.color = 'rgb(182, 182, 182)';
+                }
+
+                // downVote
+                const reactionData = {
+                    PostOrCommentId: post.id,
+                }
+
+                console.log('Downvoting post:', reactionData);
+
+                try {
+                    const response = await downVote(reactionData);
+                    window.location.reload();
+                    console.log('Dislike sent:', response);
+                } catch (error) {
+                    console.log('Error disliking post:', error);
                 }
             });
         });
