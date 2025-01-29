@@ -11,11 +11,8 @@ document.getElementById('create-post-form').addEventListener('submit', async fun
         Content: document.getElementById('create-post-content').value
     };
 
-    console.log('Creating post:', postData);
-
     try {
         const response = await sendPost(postData);
-        console.log('Post created:', response);
     } catch (error) {
         console.error('Error creating post:', error);
     }

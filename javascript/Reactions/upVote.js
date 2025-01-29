@@ -30,9 +30,6 @@ export async function upVoteComment(upVoteComment) {
             body: JSON.stringify(upVoteComment)
         });
 
-        console.log('upVoteComment:', upVoteComment);
-        console.log('response:', response);
-
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

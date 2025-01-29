@@ -132,12 +132,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 try {
                     const response = await upVotePost(reactionData);
                     window.location.reload();
-                    console.log('Like sent:', response);
                 } catch (error) {
-                    console.log('Error liking post:', error);
+                    console.error('Error liking post:', error);
                 }
-
-                console.log('Upvoting post:', reactionData);
             });
 
             postRateDownElement.addEventListener('click', async function () {
@@ -148,12 +145,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 try {
                     const response = await downVotePost(reactionData);
                     window.location.reload();
-                    console.log('Dislike sent:', response);
                 } catch (error) {
-                    console.log('Error disliking post:', error);
+                    console.error('Error disliking post:', error);
                 }
-
-                console.log('Downvoting post:', reactionData);
             });
         });
     }

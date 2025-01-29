@@ -10,11 +10,8 @@ document.getElementById('create-comment-form').addEventListener('submit', async 
         PostId: postId
     };
 
-    console.log('Creating post:', commentData);
-
     try {
         const response = await sendComment(commentData);
-        console.log('Comment created:', response);
     } catch (error) {
         console.error('Error creating comment:', error);
     }

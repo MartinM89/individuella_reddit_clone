@@ -85,12 +85,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             try {
                 const response = await upVotePost(reactionData);
                 window.location.reload();
-                console.log('Like sent:', response);
             } catch (error) {
-                console.log('Error liking post:', error);
+                console.error('Error liking post:', error);
             }
-
-            console.log('Upvoting post:', reactionData);
         });
 
         // Add event listeners to the post for downvoting
@@ -102,12 +99,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             try {
                 const response = await downVotePost(reactionData);
                 window.location.reload();
-                console.log('Dislike sent:', response);
             } catch (error) {
-                console.log('Error disliking post:', error);
+                console.error('Error disliking post:', error);
             }
-
-            console.log('Downvoting post:', reactionData);
         });
 
         // Add event listeners to each comment for upvoting and downvoting
@@ -181,12 +175,9 @@ document.addEventListener("DOMContentLoaded", async function () {
                 try {
                     const response = await upVoteComment(reactionData);
                     window.location.reload();
-                    console.log('Like sent:', response);
                 } catch (error) {
-                    console.log('Error liking comment:', error);
+                    console.error('Error liking comment:', error);
                 }
-
-                console.log('Upvoting comment:', reactionData);
             });
 
             commentRateDownElement.addEventListener('click', async function () {
@@ -197,69 +188,10 @@ document.addEventListener("DOMContentLoaded", async function () {
                 try {
                     const response = await downVoteComment(reactionData);
                     window.location.reload();
-                    console.log('Dislike sent:', response);
                 } catch (error) {
-                    console.log('Error disliking comment:', error);
+                    console.error('Error disliking comment:', error);
                 }
-
-                console.log('Downvoting comment:', reactionData);
-
             });
         });
     }
 });
-
-
-// const comments = post.comments.$values;
-// comments.forEach((comment, index) => {
-//     const commentLikes = comment.likes;
-//     const commentDislikes = comment.dislikes;
-//     const commentRating = commentLikes - commentDislikes;
-
-//     const commentDate = new Date(comment.date);
-//     const diffInhours = Math.floor((currentDate - commentDate) / (1000 * 60 * 60));
-
-//     console.log('Comment Date: ' + commentDate);
-//     console.log('Hour diff: ' + diffInhours);
-
-//     let commentTime;
-//     if (diffInhours >= 24 * 365) {
-//         commentTime = Math.floor(diffInhours / 24 / 365) + ' years ago';
-//         console.log('years');
-//     } else if (diffInhours >= 24 * 30) {
-//         commentTime = Math.floor(diffInhours / 24 / 30) + ' months ago';
-//         console.log('months');
-//     } else if (diffInhours >= 24 * 7) {
-//         commentTime = Math.floor(diffInhours / 24 / 7) + ' weeks ago';
-//         console.log('weeks');
-//     } else if (diffInhours >= 24) {
-//         commentTime = Math.floor(diffInhours / 24) + ' days ago';
-//         console.log('days');
-//     } else if (diffInhours >= 2) {
-//         commentTime = Math.floor(diffInhours) + ' hours ago';
-//         console.log('hours');
-//     } else if (diffInhours <= 1) {
-//         const diffInMinutes = Math.floor((currentDate - commentDate) / (1000 * 60));
-//         commentTime = diffInMinutes + ' minutes ago';
-//         console.log('minutes');
-//     } else {
-//         commentTime = 'recently';
-//         console.log('recently');
-//     }
-
-//     const commentDiv = document.createElement('div');
-//     commentDiv.innerHTML = `
-//         <div class="comment-container">
-//             <div class="comment-rating-buttons">
-//                 <p class="comment-rate-up"></p>
-//                 <p class="comment-rate-down"></p>
-//             </div>
-//             <div class="comment-content">
-//                 <p class="comment-details"><span>${comment.userName}</span> ${commentRating} points ${commentTime}</p>
-//                 <p class="post-comment">${comment.content}</p>
-//             </div>
-//         </div>
-//     `;
-
-//     commentsContainer.appendChild(commentDiv);
-// });
