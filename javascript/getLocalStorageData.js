@@ -12,11 +12,7 @@ function getLocalStorageData() {
 
     setTimeout(() => {
         userSelect.value = userName;
-
         subredditSelect.value = subRedditName;
-
-        console.log('User select value set to:', userSelect.value);
-        console.log('Subreddit select value set to:', subredditSelect.value);
     }, 30);
 }
 

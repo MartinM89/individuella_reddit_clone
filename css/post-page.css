@@ -168,6 +168,7 @@ body {
     height: 15px;
     margin: 0.1rem;
     background-image: url(../images/sprite-reddit.png);
+    cursor: pointer;
 }
 
 #comment-details {
