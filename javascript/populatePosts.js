@@ -20,34 +20,23 @@ document.addEventListener("DOMContentLoaded", async function () {
             const postDate = new Date(post.date);
             const currentDate = new Date();
             const diffInhours = Math.floor((currentDate - postDate) / (1000 * 60 * 60));
-
-            console.log('Post ID: ' + postNumber);
-            console.log('Post Date: ' + postDate);
-            console.log('Hour diff: ' + diffInhours);
+            const diffInMinutes = Math.floor((currentDate - postDate) / (1000 * 60));
 
             let postTime;
             if (diffInhours >= 24 * 365) {
                 postTime = Math.floor(diffInhours / 24 / 365) + ' years ago';
-                console.log('years');
             } else if (diffInhours >= 24 * 30) {
                 postTime = Math.floor(diffInhours / 24 / 30) + ' months ago';
-                console.log('months');
             } else if (diffInhours >= 24 * 7) {
                 postTime = Math.floor(diffInhours / 24 / 7) + ' weeks ago';
-                console.log('weeks');
             } else if (diffInhours >= 24) {
                 postTime = Math.floor(diffInhours / 24) + ' days ago';
-                console.log('days');
-            } else if (diffInhours >= 2) {
-                postTime = Math.floor(diffInhours) + ' hours ago';
-                console.log('hours');
             } else if (diffInhours >= 1) {
-                const diffInMinutes = Math.floor((currentDate - postDate) / (1000 * 60));
+                postTime = Math.floor(diffInhours) + ' hours ago';
+            } else if (diffInMinutes < 60 && diffInMinutes >= 1) {
                 postTime = diffInMinutes + ' minutes ago';
-                console.log('minutes ago');
-            } else {
+            } else if (diffInhours === 0) {
                 postTime = 'recently';
-                console.log('recently');
             }
 
             postDiv.innerHTML = `

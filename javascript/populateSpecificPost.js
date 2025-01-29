@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const postDate = new Date(post.date);
         const currentDate = new Date();
         const diffInhours = Math.floor((currentDate - postDate) / (1000 * 60 * 60));
+        const diffInMinutes = Math.floor((currentDate - postDate) / (1000 * 60));
 
         let postTime;
         if (diffInhours >= 24 * 365) {
@@ -34,12 +35,11 @@ document.addEventListener("DOMContentLoaded", async function () {
             postTime = Math.floor(diffInhours / 24 / 7) + ' weeks ago';
         } else if (diffInhours >= 24) {
             postTime = Math.floor(diffInhours / 24) + ' days ago';
-        } else if (diffInhours >= 2) {
-            postTime = Math.floor(diffInhours) + ' hours ago';
         } else if (diffInhours >= 1) {
-            const diffInMinutes = Math.floor((currentDate - postDate) / (1000 * 60));
+            postTime = Math.floor(diffInhours) + ' hours ago';
+        } else if (diffInMinutes < 60 && diffInMinutes >= 1) {
             postTime = diffInMinutes + ' minutes ago';
-        } else {
+        } else if (diffInhours === 0) {
             postTime = 'recently';
         }
 
