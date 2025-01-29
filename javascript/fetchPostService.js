@@ -33,7 +33,7 @@ export async function fetchSubReddits() {
             throw new Error('Network response was not ok ' + response.statusText);
         }
         const subReddits = await response.json();
-        console.log(subReddits);
+        // console.log(subReddits);
         return subReddits.$values;
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);
@@ -47,7 +47,7 @@ export async function fetchUsers() {
             throw new error('Network response was not ok ' + response.statusText);
         }
         const users = await response.json();
-        console.log(users);
+        // console.log(users);
         return users.$values;
     } catch (error) {
         console.error('There has been a problem with your fetch operation:', error);

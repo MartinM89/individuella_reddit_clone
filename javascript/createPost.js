@@ -1,6 +1,9 @@
 document.getElementById('create-post-form').addEventListener('submit', async function (event) {
     event.preventDefault();
 
+    window.localStorage.setItem('userName', document.getElementById('select-user').value);
+    window.localStorage.setItem('subRedditName', document.getElementById('select-subreddit').value);
+
     const postData = {
         Title: document.getElementById('create-post-title').value,
         UserName: document.getElementById('select-user').value,
