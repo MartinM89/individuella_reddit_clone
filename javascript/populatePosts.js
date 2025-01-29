@@ -1,6 +1,6 @@
 import { fetchAllPosts } from './fetchPostService.js';
-import { upVote } from './Reactions/upVote.js';
-import { downVote } from './Reactions/downVote.js';
+import { upVotePost } from './Reactions/upVote.js';
+import { downVotePost } from './Reactions/downVote.js';
 
 
 document.addEventListener("DOMContentLoaded", async function () {
@@ -21,22 +21,33 @@ document.addEventListener("DOMContentLoaded", async function () {
             const currentDate = new Date();
             const diffInhours = Math.floor((currentDate - postDate) / (1000 * 60 * 60));
 
-
+            console.log('Post ID: ' + postNumber);
+            console.log('Post Date: ' + postDate);
+            console.log('Hour diff: ' + diffInhours);
 
             let postTime;
             if (diffInhours >= 24 * 365) {
-                postTime = Math.floor(diffInhours / 24 / 365) + ' years';
+                postTime = Math.floor(diffInhours / 24 / 365) + ' years ago';
+                console.log('years');
             } else if (diffInhours >= 24 * 30) {
-                postTime = Math.floor(diffInhours / 24 / 30) + ' months';
+                postTime = Math.floor(diffInhours / 24 / 30) + ' months ago';
+                console.log('months');
             } else if (diffInhours >= 24 * 7) {
-                postTime = Math.floor(diffInhours / 24 / 7) + ' weeks';
+                postTime = Math.floor(diffInhours / 24 / 7) + ' weeks ago';
+                console.log('weeks');
             } else if (diffInhours >= 24) {
-                postTime = Math.floor(diffInhours / 24) + ' days';
-            } else if (diffInhours < 1) {
+                postTime = Math.floor(diffInhours / 24) + ' days ago';
+                console.log('days');
+            } else if (diffInhours >= 2) {
+                postTime = Math.floor(diffInhours) + ' hours ago';
+                console.log('hours');
+            } else if (diffInhours >= 1) {
                 const diffInMinutes = Math.floor((currentDate - postDate) / (1000 * 60));
-                postTime = diffInMinutes + ' minutes';
+                postTime = diffInMinutes + ' minutes ago';
+                console.log('minutes ago');
             } else {
-                postTime = diffInhours + ' hours';
+                postTime = 'recently';
+                console.log('recently');
             }
 
             postDiv.innerHTML = `
@@ -54,7 +65,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                         <div id="post-details">
                         <div id="post-details-${postNumber}">
                             <div>
-                                <p class="post-time">submitted ${postTime} ago by </p>
+                                <p class="post-time">submitted ${postTime} by </p>
                                 <a class="post-op" href="">${post.username}</a>
                                 <p class="post-to"> to </p>
                                 <a class="post-subreddit" href="">r/${post.subRedditName}</a>
@@ -76,6 +87,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             postsContainer.appendChild(postDiv);
         });
 
+        // Add event listeners to each post for expanding and collapsing the post content
         posts.forEach((post, index) => {
             const postPreviewElement = document.getElementById(`post-preview-${index + 1}`);
             const postDetailsElement = document.getElementById(`post-details-${index + 1}`);
@@ -103,6 +115,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             });
         });
 
+        // Add event listeners to each post for upvoting and downvoting
         posts.forEach((post, index) => {
             const postRateUpElement = document.getElementById(`rate-up-${index + 1}`);
             const postRateDownElement = document.getElementById(`rate-down-${index + 1}`);
@@ -128,7 +141,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 }
 
                 try {
-                    const response = await upVote(reactionData);
+                    const response = await upVotePost(reactionData);
                     window.location.reload();
                     console.log('Like sent:', response);
                 } catch (error) {
@@ -144,7 +157,7 @@ document.addEventListener("DOMContentLoaded", async function () {
                 }
 
                 try {
-                    const response = await downVote(reactionData);
+                    const response = await downVotePost(reactionData);
                     window.location.reload();
                     console.log('Dislike sent:', response);
                 } catch (error) {

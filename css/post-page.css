@@ -148,7 +148,7 @@ body {
     border-color: black;
 }
 
-.comment-container {
+#comment-container {
     margin-left: 0.5rem;
     margin-top: 1rem;
     padding-left: 0.5rem;
@@ -162,39 +162,27 @@ body {
     flex-direction: row;
 }
 
-.comment-rate-up {
-    width: 14px;
-    height: 15px;
-    background-image: url(../images/sprite-reddit.png);
-    background-position: -21px -1676px;
-}
-
-.comment-rate-down {
-    width: 14px;
-    height: 15px;
-    background-image: url(../images/sprite-reddit.png);
-    background-position: -108px -1654px;
-}
-
 .comment-rate-up,
 .comment-rate-down {
+    width: 14px;
+    height: 15px;
     margin: 0.1rem;
+    background-image: url(../images/sprite-reddit.png);
 }
 
-
-.comment-details {
+#comment-details {
     margin-top: 0;
     margin-left: 0.5rem;
     font-size: 0.6rem;
     color: gray;
 }
 
-.comment-details span {
+#comment-details span {
     color: rgb(52, 108, 178);
     font-weight: bold;
 }
 
-.post-comment {
+#post-comment {
     margin-top: 0.5rem;
     padding-left: 0.5rem;
     font-size: 0.8rem;
