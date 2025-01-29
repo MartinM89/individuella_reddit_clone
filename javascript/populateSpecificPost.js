@@ -1,4 +1,6 @@
 import { fetchPost } from './fetchPostService.js';
+import { upVotePost } from './Reactions/upVote.js';
+import { downVotePost } from './Reactions/downVote.js';
 import { upVoteComment } from './Reactions/upVote.js';
 import { downVoteComment } from './Reactions/downVote.js';
 
@@ -56,7 +58,59 @@ document.addEventListener("DOMContentLoaded", async function () {
                 </div>
             `;
 
+        const postRateUpElement = document.getElementById('rate-up');
+        const postRateDownElement = document.getElementById('rate-down');
+        const postRatingElement = document.getElementById('rating');
 
+        if (post.isLiked) {
+            postRateUpElement.style.backgroundPosition = '-42px -1676px';
+            postRatingElement.style.color = 'rgb(255, 140, 97)';
+            postRateDownElement.style.backgroundPosition = '-108px -1654px';
+        } else if (post.isDisliked) {
+            postRateDownElement.style.backgroundPosition = '0px -1676px';
+            postRatingElement.style.color = 'rgb(148, 148, 255)';
+            postRateUpElement.style.backgroundPosition = '-21px -1676px';
+        } else {
+            postRateUpElement.style.backgroundPosition = '-21px -1676px';
+            postRateDownElement.style.backgroundPosition = '-108px -1654px';
+            postRatingElement.style.color = 'rgb(182, 182, 182)';
+        }
+
+        // Add event listeners to the post for upvoting
+        postRateUpElement.addEventListener('click', async function () {
+            const reactionData = {
+                PostOrCommentId: post.id,
+            }
+
+            try {
+                const response = await upVotePost(reactionData);
+                window.location.reload();
+                console.log('Like sent:', response);
+            } catch (error) {
+                console.log('Error liking post:', error);
+            }
+
+            console.log('Upvoting post:', reactionData);
+        });
+
+        // Add event listeners to the post for downvoting
+        postRateDownElement.addEventListener('click', async function () {
+            const reactionData = {
+                PostOrCommentId: post.id,
+            }
+
+            try {
+                const response = await downVotePost(reactionData);
+                window.location.reload();
+                console.log('Dislike sent:', response);
+            } catch (error) {
+                console.log('Error disliking post:', error);
+            }
+
+            console.log('Downvoting post:', reactionData);
+        });
+
+        // Add event listeners to each comment for upvoting and downvoting
         const comments = post.comments.$values;
         comments.forEach((comment) => {
             const commentLikes = comment.likes;
