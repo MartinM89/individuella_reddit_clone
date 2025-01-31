@@ -1,4 +1,5 @@
 import { fetchUsers } from './fetchPostService.js';
+import { getLocalStorageData } from './getLocalStorageData.js';
 
 document.addEventListener("DOMContentLoaded", async function () {
     const users = await fetchUsers();
@@ -12,4 +13,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 
         userContainer.appendChild(userOptions);
     });
+
+    getLocalStorageData();
 });
